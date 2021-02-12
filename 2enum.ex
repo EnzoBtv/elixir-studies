@@ -1,0 +1,21 @@
+Enum.all?(["foo", "bar", "hello"], fn s -> String.length(s) > 1 end)
+Enum.any?(["foo", "bar", "hello"], fn s -> String.length(s) === 5 end)
+Enum.chunk_every([1, 2, 3, 4, 5, 6], 2)
+Enum.chunk_by(["one", "two", "three", "four", "five", "six"], fn x -> String.length(x) end)
+Enum.map_every([1, 2, 3, 4, 5, 6], 2, fn x -> x + 1000 end)
+Enum.each([1, 2, 3, 4, 5], fn x -> IO.puts(x) end)
+Enum.map([1, 2, 3, 4], fn x -> x - 1 end)
+Enum.min([1, 2, 3, 4, -1])
+Enum.min([], fn -> :foo end) #Especifica valor pra caso array esteja vazio
+Enum.max([1, 2, 3, 4])
+Enum.max([], fn -> :foo end) #Especifica valor pra caso array esteja vazio
+Enum.filter([1, 2, 3, 4], fn x -> rem(x, 2) == 0 end)
+Enum.reduce([1, 2, 3, 4], 10, fn (x, acc) -> x + acc end)
+Enum.reduce([1, 2, 3, 4], fn (x, acc) -> x + acc end)
+Enum.reduce(["a","b","c"], "1", fn(x,acc)-> x <> acc end) # Adiciona no começo da string
+Enum.sort([3, 5, 1, 2, :test, "abc", true])
+Enum.sort([%{:val => 4}, %{:val => 1}], fn (x, y) -> x[:val] > y[:val] end)
+Enum.sort([3, 5, 1, 2, :test, "abc", true], :asc)
+Enum.sort([3, 5, 1, 2, :test, "abc", true], :desc)
+Enum.uniq([1, 2, 3, 4, 1, 1, 2, 2, 2, 4])
+Enum.uniq_by([%{:x => 1, :y => 5}, %{:x => 3, :y => 2}, %{:x => 5, :y => 5}], fn coord -> coord.y end)
