@@ -27,3 +27,5 @@ end
 
 IO.puts(greet.("Hello", "Enzo"))
 IO.puts(greet.("Hey", "Enzo"))
+
+[head | tail] = [1, 2, 3]

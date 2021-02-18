@@ -78,3 +78,5 @@ end
 
 Example.double_puts :os.system_time # Prints two diff hours
 Example.double_puts2 :os.system_time # Prints one hour, two times
+
+Example.double_puts :os.system_time()
